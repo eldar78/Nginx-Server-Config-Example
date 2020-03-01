@@ -2,17 +2,13 @@
 Just a simple example
   
 
-server {
-  server_name example.com www.example.com;
+	server {
+  	server_name example.com www.example.com;
 	#listen 80;
 	#listen 443 default_server ssl;
 
 	listen 80;
 	listen 443 ssl;
-
-	# conn_limit_per_ip is set in nginx.conf
-     limit_conn conn_limit_per_ip 10;
-        limit_req zone=req_limit_per_ip burst=40 nodelay;
 
 	# force https-redirects
 	if ($scheme = http) {
@@ -85,5 +81,5 @@ server {
 		deny all;
 	}
 
-}
+	}
 
